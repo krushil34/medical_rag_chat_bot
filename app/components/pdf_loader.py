@@ -9,6 +9,7 @@ from app.config.config import DATA_PATH,CHUNK_SIZE,CHUNK_OVERLAP
 
 logger = get_logger(__name__)
 
+# Loading Pdf file and Convert into Documents
 def load_pdf_files():
     try:
         if not os.path.exists(DATA_PATH):
@@ -34,6 +35,7 @@ def load_pdf_files():
         logger.error(str(error_message))
         return []
     
+# Documents Split into chunks
 def create_text_chunks(documents):
     try:
         if not documents:

@@ -5,6 +5,7 @@ from app.common.custom_exception import CustomException
 
 logger = get_logger(__name__)
 
+# Embedding model code
 def get_embedding_model():
     try:
         logger.info("Initializing our Huggingface embedding model")
