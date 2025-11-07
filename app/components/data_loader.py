@@ -21,5 +21,6 @@ def process_and_store_pdfs():
         logger.error(str(error_message))
 
 
-    if __name__=="__main__":
-        process_and_store_pdfs()
+if __name__=="__main__":
+    process_and_store_pdfs()
+    

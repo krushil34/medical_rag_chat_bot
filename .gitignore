@@ -1,2 +1,6 @@
 .env
 venv
+.VScode/
+RAG_medical_chatbot.egg-info/
+logs/
+vectorestore/db_faiss

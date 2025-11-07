@@ -45,7 +45,7 @@ def create_qa_chain():
         if db is None:
             raise CustomException("Vector store not present or empty")
 
-        llm = load_llm(huggingface_repo_id=HUGGINGFACE_REPO_ID , hf_token=HF_TOKEN )
+        llm = load_llm( )
 
         if llm is None:
             raise CustomException("LLM not loaded")
@@ -66,7 +66,7 @@ def create_qa_chain():
 
         # )
         qa_chain_lcel=(
-            RunnableParallel({"context":retriver ,"question":RunnablePassthrough()})
+            RunnableParallel({"context":retriver | format_docs,"question":RunnablePassthrough()})
             | chat_promt
             | llm
             |StrOutputParser()
